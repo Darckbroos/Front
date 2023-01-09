@@ -9,89 +9,106 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="h-100 vh-100" id="accordionExample">
-        <div class="accordion-item" >
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapse">
-            <img src="./img/mostrar.png" width="50px">
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="row">
-                <div class="col">
-                  
-                    <nav class="nav flex-column ">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                        <a class="nav-link" href="#">Link</a>
-                        <a class="nav-link" href="#">Link</a>
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </nav>
-                  
-                </div>
-             </div>
+
+<button class="btn btn-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-expanded="false" aria-controls="offcanvasScrolling">
+    <img src="./img/mostrar.png" width="50px">
+</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <img src="./img/esconder.png" width="50px">
+</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./img/arton219263.jpg" class="img-fluid rounded-start" alt="1000px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
-        
-        <div class="d-flex justify-content-end ">
-            <div class="accordion-item d-flex" >
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed  align-self-center vh-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
-                        <img src="./img/esconder.png" width="50px"></button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse align-self" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="collapseTwo" class="accordion-collapse collapse align-self-center" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="collapseTwo" class="accordion-collapse collapse align-self-end" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                          <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./img/descarga.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
+          </div>
         </div>
     </div>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./img/pepinillorick.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./img/triunfador.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+    <img src="./img/plano.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid" width="900px">
+</div>
+
+
+
 
 
 </body>
 </html>
+
