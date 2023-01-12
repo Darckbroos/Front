@@ -112,15 +112,25 @@ function createButton(e){
 
   var x = e.clientX;
     var y = e.clientY;
-    for (var i = 0; i < 3; i++) {
       var button = document.createElement("button");
       button.style.position = "absolute";
       button.style.left = x + -50 +"px";
       button.style.top = y + -15 +"px";
       button.innerHTML = "Crear icono ";
       button.className = "btn btn-success";
+      button.onclick = showMenu;
       document.body.appendChild(button);
-    }
+    
+}
+
+function showMenu() {
+  var menu = document.createElement("div");
+  menu.style.width = "100px";
+  menu.style.height = "100px";
+  menu.style.backgroundColor = "red";
+  menu.innerHTML = "Menu options";
+  menu.className = "overflow-hidden";
+  document.body.appendChild(menu);
 }
 </script>
 
