@@ -115,17 +115,10 @@ function createButton(e){
     for (var i = 0; i < 3; i++) {
       var button = document.createElement("button");
       button.style.position = "absolute";
-      button.style.left = x + "px";
-      button.style.top = y + (i*50) + "px";
-      if (i==0) {
-        button.innerHTML = "Crear icono ";
-      }
-      if (i==1) {
-        button.innerHTML = "Editar Nombre";
-      }
-      if (i==2) {
-        button.innerHTML = "Eliminar icono";
-      }
+      button.style.left = x + -50 +"px";
+      button.style.top = y + -20 +"px";
+      button.innerHTML = "Crear icono ";
+      button.className = "btn btn-success";
       document.body.appendChild(button);
     }
 }
