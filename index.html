@@ -33,15 +33,13 @@
         </div>
     </div>
 </div>
-
-<button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-    <img src="./img/esconder.png" width="50px">
+<button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/esconder.png" width="50px">
 </button>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
-    <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div class="card mb-3" style="max-width: 540px;">
@@ -103,14 +101,35 @@
   </div>
 </div>
 <div class="text-center">
-    <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4" style= "width:90%; height: 850px">
+      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4" style= "width:90%; height: 850px" onclick="createButton(event)">
     
 </div>
 
+ 
 
+<script>
+function createButton(e){
 
-
+  var x = e.clientX;
+    var y = e.clientY;
+    for (var i = 0; i < 3; i++) {
+      var button = document.createElement("button");
+      button.style.position = "absolute";
+      button.style.left = x + "px";
+      button.style.top = y + (i*50) + "px";
+      if (i==0) {
+        button.innerHTML = "Crear icono ";
+      }
+      if (i==1) {
+        button.innerHTML = "Editar Nombre";
+      }
+      if (i==2) {
+        button.innerHTML = "Eliminar icono";
+      }
+      document.body.appendChild(button);
+    }
+}
+</script>
 
 </body>
 </html>
-
