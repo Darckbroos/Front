@@ -17,3 +17,7 @@ i.fa-lock{
     z-index: 1;
     font-size: 1.5em;
 }
+.mant{
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
