@@ -101,37 +101,52 @@
   </div>
 </div>
 <div class="text-center">
-      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4" style= "width:90%; height: 850px" onclick="createButton(event)">
+  <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4" style= "width:90%; height: 850px" id="myImg">
+  <button id="myBtn" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Click me</button>
     
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
- 
+
 
 <script>
-function createButton(e){
+var img = document.getElementById("myImg");
+var btn = document.getElementById("myBtn");
 
-  var x = e.clientX;
-    var y = e.clientY;
-      var button = document.createElement("button");
-      button.style.position = "absolute";
-      button.style.left = x + -50 +"px";
-      button.style.top = y + -15 +"px";
-      button.innerHTML = "Crear icono ";
-      button.className = "btn btn-success";
-      button.onclick = showMenu;
-      document.body.appendChild(button);
-    
-}
+img.addEventListener("click", function(event) {
+var x = event.pageX;
+var y = event.pageY;
 
-function showMenu() {
-  var menu = document.createElement("div");
-  menu.style.width = "100px";
-  menu.style.height = "100px";
-  menu.style.backgroundColor = "red";
-  menu.innerHTML = "Menu options";
-  menu.className = "overflow-hidden";
-  document.body.appendChild(menu);
-}
+btn.style.position = "absolute";     
+btn.style.left = x + -50 +"px";
+btn.style.top = y + -15 +"px";
+btn.classList.remove("d-none");
+btn.classList.add("d-block");
+
+});
+
+//para mantener la posicion del boton cuando se redimensione la ventana
+window.addEventListener('resize', function(){
+btn.style.left = x + -50 + "px";
+btn.style.top = y + -15 + "px";
+});
 </script>
 
 </body>
