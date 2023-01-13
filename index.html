@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<button class="btn btn-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-expanded="false" aria-controls="offcanvasScrolling">
+<button class="btn btn-transparent float-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-expanded="false" aria-controls="offcanvasScrolling">
     <img src="./img/mostrar.png" width="50px">
 </button>
 
@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-<button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/esconder.png" width="50px">
+<button class="btn btn-transparent float-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/esconder.png" width="50px">
 </button>
 
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
@@ -101,24 +101,58 @@
   </div>
 </div>
 <div class="text-center">
-  <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4" style= "width:90%; height: 850px" id="myImg">
+  <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded" style= "width:80%; " id="myImg">
   <button id="myBtn" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Click me</button>
     
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <br>
         <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div>
+          <div>
+              <div class="border border-primary position-absolute top-0 start-50 translate-middle " style="width: 30%;">
+                <button><i class="bi bi-camera-video"></i></button>
+                <button><i class="bi bi-door-open"></i></button>
+                <button><img src="img/icons8-puerta-de-celda-de-cárcel-50.png" width="15px"></button>
+              </div>
+              <br>
+              <div class="border border-primary position-absolute top-25 start-50 translate-middle " style="width: 45%;">
+                <button class="btn btn-primary " >Camara</button>
+                <button class="btn btn-success " >Puerta</button>
+                <button class="btn btn-danger " >Reja</button>
+              </div>
+              <br>
+              <div class="border border-primary">
+                <div>
+                  <button class="btn btn-primary ">Grabar</button>
+                  <button class="btn btn-danger ">Pausar Grabacion</button>
+                  <button class="btn btn-success " style="margin-bottom: 4px;" >Grabar Audio</button>
+                </div>
+                <div>
+                  <button class="btn btn-primary">Abrir Puerta</button>
+                  <button class="btn btn-danger ">Cerrar Puerta</button>
+                  <button class="btn btn-primary ">Abrir Reja</button>
+                  <button class="btn btn-danger ">Cerrar Reja</button>
+                </div>
+              </div>
+              <div class="border border-primary position-absolute top-100 start-50 translate-middle" style="width: 50%;">
+                <button class="btn btn-primary" >Agregar</button>
+                <button class="btn btn-success" >Editar</button>
+                <button class="btn btn-danger" >Eliminar</button>
+              </div>
+            </div>
+            <br>  
+          </div>
+            <br>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
       </div>
     </div>
   </div>
@@ -129,6 +163,7 @@
 <script>
 var img = document.getElementById("myImg");
 var btn = document.getElementById("myBtn");
+
 
 img.addEventListener("click", function(event) {
 var x = event.pageX;
