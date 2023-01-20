@@ -10,12 +10,31 @@
     <title>Document</title>
 </head>
 <body>
-
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand mr-auto" href="#">
+          <img src="./img/logo-cpass.png" alt="Your Brand" width="100%" height="90px" style="margin-left: 30px;">
+        </a>
+        <div style="margin-right: 100px;" >
+          <button class="btn btn-outline-dark"><i class="bi bi-person-square"></i></button>
+          <button type="button" class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear-fill"></i></button>
+          <ul class="dropdown-menu dropdown-menu-lg-end visible" style="margin-top: -25px; margin-right: 100px;">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Action two</a></li>
+            <li><a class="dropdown-item" href="#">Action three</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+</div>
+  
 <button class="btn btn-transparent float-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-expanded="false" aria-controls="offcanvasScrolling">
     <img src="./img/mostrar.png" width="50px">
 </button>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div style="margin-top: 115px;" class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -36,7 +55,7 @@
 <button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/esconder.png" width="50px">
 </button>
 
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
+<div style="margin-top: 115px;" class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -103,9 +122,7 @@
 <div class="text-center">
   <div class="row " >
     <div class="col-12">
-      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded" style= "width:81%; " id="myImg">
-    </div>
-    <div class="col-12">
+      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded" style= "width:76%; " id="my-image">
       <button id="myBtn" class="btn btn-primary d-none mant mx-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">asig-accion</button>
     </div>
   </div> 
@@ -166,27 +183,37 @@
 
 
 <script>
-var img = document.getElementById("myImg");
-var btn = document.getElementById("myBtn");
+    var image = document.getElementById("my-image");
+    var button = document.getElementById("myBtn");
+  
+    image.addEventListener("click", function(event) {
+      // Obtener la posición del clic
+      var x = event.clientX;
+      var y = event.clientY;
+  
+      button.style.position = "absolute";     
+      button.style.left = x + -50 +"px";
+      button.style.top = y + -15 +"px";
+      button.classList.remove("d-none");
+      button.classList.add("d-block");
+      button.style.display = 'block';
+      console.log("Width: " +  button.style.left);
+      console.log("Height: " + button.style.top);
+            
+    });
 
+    window.addEventListener('resize', function(){ 
+  var xPercent = btn.offsetLeft / image.clientWidth;
+  var yPercent = btn.offsetTop / image.clientHeight;
 
-img.addEventListener("click", function(event) {
-var x = event.pageX;
-var y = event.pageY;
+    // Aplicar el porcentaje a la posición del botón en cada redimensionamiento
+  btn.style.left = xPercent * image.clientWidth + "px";
+  btn.style.top = yPercent * image.clientHeight + "px";
 
-btn.style.position = "absolute";     
-btn.style.left = x + -50 +"px";
-btn.style.top = y + -15 +"px";
-btn.classList.remove("d-none");
-btn.classList.add("d-block");
-
+  console.log("Width: " +  btn.style.left);
+console.log("Height: " + btn.style.top);
 });
 
-//para mantener la posicion del boton cuando se redimensione la ventana
-window.addEventListener('resize', function(){
-btn.style.left = x + -50 + "px";
-btn.style.top = y + -15 + "px";
-});
 </script>
 
 </body>
