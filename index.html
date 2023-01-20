@@ -19,7 +19,7 @@
         <div style="margin-right: 100px;" >
           <button class="btn btn-outline-dark"><i class="bi bi-person-square"></i></button>
           <button type="button" class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear-fill"></i></button>
-          <ul class="dropdown-menu dropdown-menu-lg-end visible" style="margin-top: -25px; margin-right: 100px;">
+          <ul class="dropdown-menu dropdown-menu-lg-end z-3 position-absolute p-1 rounded-3" style="margin-top: -25px; margin-right: 100px;">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Action two</a></li>
             <li><a class="dropdown-item" href="#">Action three</a></li>
@@ -55,7 +55,7 @@
 <button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/esconder.png" width="50px">
 </button>
 
-<div style="margin-top: 115px;" class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
+<div style="margin-top: 115px;" class="offcanvas offcanvas-end z-0 position-absolute p-5 rounded-3" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -122,8 +122,8 @@
 <div class="text-center">
   <div class="row " >
     <div class="col-12">
-      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded" style= "width:76%; " id="my-image">
-      <button id="myBtn" class="btn btn-primary d-none mant mx-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">asig-accion</button>
+      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class=" mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded" style= "width:76%; " id="my-image">
+      <button id="myBtn" class="btn btn-primary d-none mant mx-autom position-fixed" data-bs-toggle="modal" data-bs-target="#staticBackdrop">asig-accion</button>
     </div>
   </div> 
   <!-- Modal -->
@@ -213,6 +213,10 @@
   console.log("Width: " +  btn.style.left);
 console.log("Height: " + btn.style.top);
 });
+
+
+// elemento responsivo
+
 
 </script>
 
