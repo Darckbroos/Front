@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
-<body>
-<div>
+<body id="body">
+
+  <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand mr-auto" href="#">
@@ -29,15 +30,16 @@
       </div>
     </nav>
 </div>
-  
-<button class="btn btn-transparent float-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-expanded="false" aria-controls="offcanvasScrolling">
+
+  <button class="btn btn-transparent float-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-expanded="false" aria-controls="offcanvasScrolling" id="boton1">
     <img src="./img/mostrar.png" width="50px">
 </button>
+
 
 <div style="margin-top: 115px;" class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" id="cerrar1"></button>
     </div>
     <div class="offcanvas-body">
         <div class="d-grid gap-2">
@@ -52,13 +54,16 @@
         </div>
     </div>
 </div>
-<button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/esconder.png" width="50px">
-</button>
 
-<div style="margin-top: 115px;" class="offcanvas offcanvas-end z-0 position-absolute p-5 rounded-3" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
+
+  <button class="btn btn-transparent position-absolute top-50 end-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <img src="./img/esconder.png" width="50px" id="boton2">
+  </button>
+
+<div style="margin-top: 115px;" class="offcanvas offcanvas-end z-0 p-5 rounded-3" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="cerrar2"></button>
   </div>
   <div class="offcanvas-body">
     <div class="card mb-3" style="max-width: 540px;">
@@ -119,13 +124,11 @@
     </div>
   </div>
 </div>
-<div class="text-center">
-  <div class="row " >
-    <div class="col-12">
-      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class=" mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded" style= "width:76%; " id="my-image">
-      <button id="myBtn" class="btn btn-primary d-none mant mx-autom position-fixed" data-bs-toggle="modal" data-bs-target="#staticBackdrop">asig-accion</button>
-    </div>
-  </div> 
+
+      <img src="./img/plano1.jpg" alt="Descripción de la imagen" class="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded"  style= "width:73%; min-width: 30%; " id="myImg">
+
+      <button id="myBtn" class="btn btn-primary d-none mant" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Click me</button>
+
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -183,40 +186,94 @@
 
 
 <script>
-    var image = document.getElementById("my-image");
-    var button = document.getElementById("myBtn");
+var img = document.getElementById("myImg");
+var btn = document.getElementById("myBtn");
+
+var boton1 = document.getElementById("boton1");
+var boton2 = document.getElementById("boton2");
+
+
+ //Cambiar tamaño de imagen
+document.getElementById("boton1").onclick = function(){
+  var image = document.getElementById("myImg");
+  var div1 = document.getElementById("row");
+  var imgDiv = document.getElementById("imgDiv");
+  image.style.width="55%";
+  //reduxImage();
+} 
+
+
+  document.getElementById("boton2").onclick = function(){
+  var image = document.getElementById("myImg");
+  var div2 = document.getElementById("row");
+  var imgDiv = document.getElementById("imgDiv");
+  image.style.marginRight="-140px"
+  image.style.width="55%";
+  //reduxImage();
+} 
+
+
+document.getElementById("cerrar1").onclick= function(){
+ var image = document.getElementById("myImg");
+ var div1 = document.getElementById("row");
+ var imgDiv = document.getElementById("imgDiv");
+ image.style.width="73%";
+ imgDiv.style="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded"; 
+}
+
+function changeMargin() {
+  var idrow = document.getElementById("idRow");
   
-    image.addEventListener("click", function(event) {
-      // Obtener la posición del clic
-      var x = event.clientX;
-      var y = event.clientY;
-  
-      button.style.position = "absolute";     
-      button.style.left = x + -50 +"px";
-      button.style.top = y + -15 +"px";
-      button.classList.remove("d-none");
-      button.classList.add("d-block");
-      button.style.display = 'block';
-      console.log("Width: " +  button.style.left);
-      console.log("Height: " + button.style.top);
-            
-    });
+}
 
-    window.addEventListener('resize', function(){ 
-  var xPercent = btn.offsetLeft / image.clientWidth;
-  var yPercent = btn.offsetTop / image.clientHeight;
 
-    // Aplicar el porcentaje a la posición del botón en cada redimensionamiento
-  btn.style.left = xPercent * image.clientWidth + "px";
-  btn.style.top = yPercent * image.clientHeight + "px";
+function reduxImage()
+{
+  if(boton1.getElementById("boton1").onclick())
+  {
+    image.style.width="73%";
+  }
+  else
+  {
+    imgDiv.style="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded";
+  }
 
-  console.log("Width: " +  btn.style.left);
-console.log("Height: " + btn.style.top);
+  if(boton2.getElementById("boton2").onclick())
+  {
+    image.style.width="73%";
+  }
+  else
+  {
+    imgDiv.style="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded";
+  }
+}
+
+document.getElementById("cerrar2").onclick= function(){
+  var image = document.getElementById("myImg");
+  var div1 = document.getElementById("row");
+  var imgDiv = document.getElementById("imgDiv");
+  image.style.width="73%";
+  imgDiv.style="mx-auto d-block img-fluid border border-danger border border-4 object-fit-lg-contain border rounded"; 
+}
+
+
+img.addEventListener("click", function(event) {
+var x = event.pageX;
+var y = event.pageY;
+
+btn.style.position = "absolute";     
+btn.style.left = x + -50 +"px";
+btn.style.top = y + -15 +"px";
+btn.classList.remove("d-none");
+btn.classList.add("d-block");
+
 });
 
+//para mantener la posicion del boton cuando se redimensione la ventana
 
-// elemento responsivo
-
+window.addEventListener("resize", function(){
+  button.classList.remove("moved");
+});
 
 </script>
 
